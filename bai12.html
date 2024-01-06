@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính lãi suất</title>
+</head>
+<body>
+<table border="1" style="background: aqua">
+    <tr >
+      <td colspan="2"> <h1 style="background: cadetblue">Tính lãi xuất khoản vay</h1></td>
+    </tr>
+    <tr style="height: 40px">
+        <td style="background: cadetblue"> Số tiền vay :</td>
+        <td><input style="height: 40px ;width: 230px" type="number" id="id1"></td>
+    </tr>
+    <tr style="height: 40px">
+        <td style="background: cadetblue"> Số tháng cho vay :</td>
+        <td><input style="height: 40px ;width: 230px" type="number" id="id2"></td>
+    </tr>
+    <tr style="height: 40px">
+        <td style="background: cadetblue"> Lãi suất hàng tháng : </td>
+        <td><input style="height: 40px ;width: 230px" type="number" id="id3"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button onclick="tinh()" style="width: 50px; background: 60px; background: coral">Tính</button></td>
+
+    </tr>
+    <tr style="height: 40px">
+        <td style="background: cadetblue">Tổng dư nợ :</td>
+        <td><input style="height: 40px ;width: 230px" type="text" id="kq"></td>
+    </tr>
+    <tr style="height: 40px">
+        <td style="background: cadetblue "> Dư nợ hàng tháng phải trả :</td>
+        <td><input style="height: 40px ;width: 230px" type="text" id="kq2"></td>
+    </tr>
+    <script>
+        function tinh() {
+            let tiengoc= parseFloat(document.getElementById('id1').value) ;
+            let sothang= parseFloat(document.getElementById('id2').value);
+            let laisuat= parseFloat(document.getElementById('id3').value);
+            let tienno=tiengoc*((1+(laisuat/100))**sothang);
+            document.getElementById('kq').value=tienno.toLocaleString()+' vnd/'+sothang+"tháng";
+            document.getElementById('kq2').value=(tienno/sothang).toLocaleString()+' vnd/tháng';
+        }
+    </script>
+</table>
+</body>
+</html>

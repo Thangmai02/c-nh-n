@@ -62,8 +62,7 @@
 }
     .footer {
         padding: 20px; /* Some padding */
-        text-align: center; /* Center text*/
-        background: #ddd; /* Grey background */
+        /*text-align: center; !* Center text*!*/
     }
 
 
@@ -90,6 +89,7 @@
     flex: 40%;
 }
 .menu2{
+    ;
     flex: 50%;
 }
 /* Style for the dropdown menu */
@@ -134,4 +134,26 @@
 .icon{
     width: 20px;
     height: 20px;
+}
+
+.footer {
+    color: white;
+    height: 200px;
+    text-align: center; /* Căn giữa các phần tử con */
+    font-family: "Baskerville Old Face";
+    background-color: black;
+}
+
+.footer > div {
+    display: inline-block; /* Hiển thị các phần tử div theo chiều ngang */
+    margin: 0 10px; /* Khoảng cách giữa các phần tử div */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin: 5px 0;
 }

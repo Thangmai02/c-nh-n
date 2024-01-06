@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tiền điện</title>
+</head>
+<body>
+bài 10 <br>
+<table border="1">
+    <tr>
+        <td colspan="2" style="text-align: center ;background: coral">Tính tiền điện</td>
+    </tr>
+    <tr>
+        <td style="background: coral; height: 40px">Điện năng tiêu thụ(kwh) :</td>
+        <td><input style="height: 40px ;width: 230px" type="number" id="id1"></td>
+
+    </tr>
+    <tr>
+        <td colspan="2"><img src="Screenshot%202023-12-21%20110346.png"></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="background: coral ;"><button  style="background: cadetblue ; width: 80px ;height: 40px; border-radius: 10% ;color: white" onclick="tinh()">Tính</button></td>
+
+    </tr>
+    <tr>
+        <td colspan="2" style="height: 60px"><input  style="height: 60px; width: 400px ;" id="kq" ></td>
+    </tr>
+    <script>
+        function tinh(){
+            let a= parseFloat(document.getElementById('id1').value);
+            let giabacthang1=1806;
+            let giabacthang2=1866;
+            let giabacthang3=2167;
+            let giabacthang4=2729;
+            let giabacthang5=3050;
+            let giabacthang6=3151;
+            let sanluong1=50
+            let sanluong2=50
+            let sanluong3=100
+            let sanluong4=100
+            let sanluong5=100
+            let sanluong6=0
+            if (a<=sanluong1){
+                document.getElementById('kq').value=a*giabacthang1 + 'vnđồng';
+            }else if (a <= sanluong1 + sanluong2){
+                document.getElementById('kq').value= Sanluong1 * giabacthang1 + (a - sanluong1) * giabacthang2 +"vnđồng";
+
+            }else if (a<=sanluong1 + sanluong2 + sanluong3){
+                document.getElementById('kq').value= sanluong1 * giabacthang1 + sanluong2 * giabacthang2 + (a - sanluong1 - sanluong2) * giabacthang3+"vnđồng";
+
+            }else if (a<=sanluong1 + sanluong2 + sanluong3 + sanluong4){
+                document.getElementById('kq').value= sanluong1 * giabacthang1 + sanluong2 * giabacthang2 + sanluong3 * giabacthang3 + sanluong4 * giabacthang4 + (a - sanluong1 - sanluong2 - sanluong3 - sanluong4) * giabacthang5 +"vnđồng";
+
+            }else if (a<=sanluong1 + sanluong2 + sanluong3 + sanluong4 + sanluong5){
+                document.getElementById('kq').value=  sanluong1 * giabacthang1 + sanluong2 * giabacthang2 + sanluong3 * giabacthang3 + (a - sanluong1 - sanluong2 - sanluong3) * giabacthang4 +"vnđồng";
+
+            }else {
+                document.getElementById('kq').value=sanluong1 * giabacthang1 + sanluong2 * giabacthang2 + sanluong3 * giabacthang3 + sanluong4 * giabacthang4 + sanluong5 * giabacthang5 + (a - sanluong1 - sanluong2 - sanluong3 - sanluong4 - sanluong5) * giabacthang6 +"vnđồng";
+            }
+        }
+    </script>
+</table>
+</body>
+</html>
