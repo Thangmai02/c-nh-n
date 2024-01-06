@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Position Button Example</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color:pink;
+            color: darkslategray;
+        }
+
+
+        .inputz input{
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+            margin: 10px;
+            border: none;
+            background-color:deeppink;
+            color: #fff;
+            border-radius: 5px;
+        }
+        #btnNo{
+            background: brown;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="text">
+    <h1>Do you Love me</h1>
+</div>
+<br>
+<div>  </div>
+<br>
+<div class="inputz">
+
+    <input type="button" value="Yes" onclick="yesClick()">
+    <input id="btnNo" type="button" value="No" onmouseover="noHover()" style="position: absolute">
+
+</div>
+
+
+<script>
+
+    function yesClick()
+    {
+        alert("Yes. you are right ");
+    }
+    function noHover()
+    {
+        var x = Math.round(Math.random() * window.innerWidth);
+        var y = Math.round(Math.random() * window.innerHeight);
+        document.getElementById('btnNo').style.left = x + 'px';
+        document.getElementById('btnNo').style.top = y + 'px';
+    }
+
+</script>
+
+</body>
+</html>
+
+
